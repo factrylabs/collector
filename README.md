@@ -13,7 +13,7 @@ This repository contains the Dockerfile and scripts to build a Docker image for 
 If you have a working internet connection, you can run the Factry Historian Collector in a Docker container using the following command:
 
 ```bash
-docker run -d --name factry-collector -e API_TOKEN=<API_TOKEN> -e PRODUCT=<PRODUCT_NAME>ghcr.io/factrylabs/collector:latest
+docker run -d --restart unless-stopped --name factry-collector -e API_TOKEN=<API_TOKEN> -e PRODUCT=<PRODUCT_NAME> ghcr.io/factrylabs/collector:latest
 ```
 
 Replace `<API_TOKEN>` with your API token for the Collector. You can generate your API token in the Factry Historian web interface.
@@ -30,7 +30,7 @@ The product names available are:
 If you do not have a working internet connection, you can download the binary of the Factry Historian Collector from the Factry Portal and copy it to your local machine.  You can that run the Factry Historian Collector in a Docker container using the following command:
 
 ```bash
-docker run -v <PATH_TO_BINARY>:/opt/factry/collector -d --name factry-collector -e API_TOKEN=<API_TOKEN>  ghcr.io/factrylabs/collector:latest
+docker run -v <PATH_TO_BINARY>:/opt/factry/collector --restart unless-stopped -d --name factry-collector -e API_TOKEN=<API_TOKEN>  ghcr.io/factrylabs/collector:latest
 ```
 
 Replace `<PATH_TO_BINARY>` with the path to the binary of the Factry Historian Collector on your local machine. If you wish to make use of the auto-update feature, you must make sure that permissions are set correctly on the binary for the user running the Docker container.
