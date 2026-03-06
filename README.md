@@ -42,5 +42,5 @@ The Factry Historian Collector can be configured using environment variables. Th
 - `API_TOKEN`: The API token for the Collector (required)
 - `PRODUCT`: The name of the collector product (required if the binary is not available)
 - `ARCH`: The architecture of the collector binary that needs to be downloaded (default: `amd64`). Available options are `amd64`, `armv7`, `armv6` and `arm64`.
-- `VERSION`: The version of the collector binary that needs to be downloaded (default: `latest`). Example: `v1.0.0`.
+- `VERSION`: The version of the collector binary that needs to be downloaded (default: `latest`). Example: `1.0.0`.
 - `RELEASE_CHANNEL`: The release channel of the collector binary that needs to be downloaded (default: `stable`). Available options are `stable` and `preview`.
